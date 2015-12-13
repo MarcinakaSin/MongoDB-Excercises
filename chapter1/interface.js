@@ -1,9 +1,12 @@
 /*
  *  Inserts "doc" into the collection "movies".
  */
+
 exports.insert = function(db, doc, callback) {
   // TODO: implement
-  callback(null);
+  //callback(null);
+  
+  db.collection('movies').insert(doc, callback);
 };
 
 /*
@@ -14,5 +17,7 @@ exports.insert = function(db, doc, callback) {
  */
 exports.byDirector = function(db, director, callback) {
   // TODO: implement
-  callback(null, []);
+  //callback(null, []);
+  var query = {director};
+  db.collection('movies').find(query).toArray(callback);
 };
