@@ -11,6 +11,10 @@ var mongoose = require('mongoose');
  *                a student should take before taking this course.
  */
 var schema = new mongoose.Schema({
+	_id: { type: String, required: true },
+	title: { type: String, maxlength: 140, required: true },
+	description: { type: String, required: true },
+	requirements: []
   // Implement schema here!
 });
 
