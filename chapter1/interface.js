@@ -19,5 +19,5 @@ exports.byDirector = function(db, director, callback) {
   // TODO: implement
   //callback(null, []);
   var query = {director};
-  db.collection('movies').find(query).toArray(callback);
+  db.collection('movies').find(query).sort( { title: 1 } ).toArray(callback);
 };
